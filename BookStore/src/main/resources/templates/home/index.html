@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <title>Home</title>
+  <link th:href="@{/css/bootstrap.min.css}" rel="stylesheet">
+  <link th:href="@{/css/animate.min.css}" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+      background-size: 400% 400%;
+      animation: gradient 15s ease infinite;
+      height: 100vh;
+    }
+
+    @keyframes gradient {
+      0% {
+        background-position: 0% 50%;
+      }
+      50% {
+        background-position: 100% 50%;
+      }
+      100% {
+        background-position: 0% 50%;
+      }
+    }
+  </style>
+</head>
+<body>
+<div th:replace="layout :: header"></div>
+
+<div class="content-wrapper" th:fragment="content">
+  <div class="container">
+    <div class="jumbotron text-center animated fadeInDown">
+      <h1 class="display-4">Nguyễn Mậu Phương</h1>
+      <hr class="my-4">
+      <p class="lead">Đọc sách là một nghệ thuật tích cực, giàu trí tưởng tượng và cần cả sự nổ lực.</p>
+      <p class="lead">Bởi vì sách là cả thế giới.</p>
+    </div>
+
+    <div class="row justify-content-center">
+      <div class="col-md-6">
+        <div class="card animated fadeInUp delay-1s">
+          <div class="card-body text-center"> <!-- Thêm class text-center để căn giữa nội dung -->
+            <h5 class="card-title">Thông tin liên hệ</h5>
+            <ul class="list-unstyled"> <!-- Thêm class list-unstyled để loại bỏ dấu chấm tròn -->
+              <li>
+                <a href="tel:0123456789">Phone: 0123456789</a>
+              </li>
+              <li>
+                <a href="mailto:k21.hutech@gmail.com?subject=Support&body=Message">Email</a>
+              </li>
+              <li>
+                <a href="https://www.facebook.com/m.phuong0103">Facebook</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+  </div>
+</div>
+
+<div th:replace="layout :: footer"></div>
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <title>Sửa danh mục</title>
+  <link th:href="@{/css/bootstrap.min.css}" rel="stylesheet">
+  <link th:href="@{/css/animate.min.css}" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+ <style>body {
+      background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+      background-size: 400% 400%;
+      animation: gradient 15s ease infinite;
+      height: 100vh;
+    }
+
+    @keyframes gradient {
+      0% {
+        background-position: 0% 50%;
+      }
+      50% {
+        background-position: 100% 50%;
+      }
+      100% {
+        background-position: 0% 50%;
+      }
+    }
+ </style>
+</head>
+<body>
+
+<div th:replace="layout :: header"></div>
+
+<div class="container mt-4">
+  <h1>Sửa danh mục</h1>
+  <form th:action="@{/categories/edit/{id}(id=${category.id})}" th:object="${category}" method="post">
+    <div class="col-6 mb-3">
+      <label class="form-label" for="name">Tên danh mục:</label>
+      <input class="form-control" type="text" th:field="*{name}" id="name">
+      <div class="text-danger" th:if="${#fields.hasErrors('name')}" th:errors="*{name}"></div>
+    </div>
+    <input type="submit" class="btn btn-primary" value="Cập nhật">
+  </form>
+  <br>
+  <a th:href="@{/categories}">Quay lại danh sách</a>
+</div>
+
+<div th:replace="layout :: footer"></div>
+
+</body>
+</html>
